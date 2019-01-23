@@ -1,7 +1,7 @@
 /****** GENERAL ******/
 
 body {
-    background-color: #EDEDED
+    background-color: #EDEDED;
 }
 
 html {
@@ -17,7 +17,7 @@ p {
 
 img {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 2vw;
 }
 
 section {
@@ -25,6 +25,8 @@ section {
     margin: 0 auto;
 }
 
+/* Stjernen (*) kalder alle dine elementer i din kode */
+/* Box-sizing: Inkluderer et elements padding og border i dens totale width og hight - Koden under sørger for at alle elementer skaleres på den mest intuitive måde muligt  */
 * {
     box-sizing: border-box;
 }
@@ -32,7 +34,8 @@ section {
 /****** HEADER ******/
 
 a {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     font-size: 1rem;
     color: black;
     width: 100%;
@@ -96,14 +99,14 @@ header nav a:hover {
     justify-content: flex-start;
 }
 
-.column img {
+#om .column img {
     display: block;
     margin: auto;
     margin-top: 20px;
     width: 80%;
 }
 
-.column p {
+#om .column p {
     margin-bottom: 30px;
     line-height: 2rem
 }
@@ -132,10 +135,24 @@ header nav a:hover {
 
 /****** PORTFOLIO ******/
 
-iframe {
-    width: 100%;
-    height: 771px;
-    margin-bottom: 30px;
+#portfolio {
+    display: block;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery a {
+    flex-basis: 250px;
+    flex-grow: 1;
+}
+
+.gallery img:hover {
+    cursor: pointer;
+    transform: scale(1.5);
 }
 
 /****** FOOTER ******/
@@ -150,4 +167,165 @@ iframe {
 #footer p {
     text-align: center;
     color: black;
+}
+
+/****** PORTFOLIO SIDER ******/
+
+.portfolio_splash {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project_text {
+    margin: 0vw 5vw 10vw 5vw;
+}
+
+.project_text h1 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+    font-size: 5rem;
+    color: black;
+    width: 100%;
+    margin: auto;
+}
+
+.project_text h2 {
+    text-align: center;
+    font-family: 'Roboto thin', sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    color: black;
+    width: 100%;
+}
+
+.project_text p {
+    text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    .portfolio_splash {
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2vw;
+    }
+}
+
+/****** SCROLL DOWN ARROW ******/
+/****** LÅNT FRA CODEPEN: https://codepen.io/codeconvey/pen/GNGYOB******/
+
+#arrow img {
+    width: 40vw;
+    height: 40vw;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+.downArrow {
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+}
+
+.bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+}
+
+@-moz-keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -moz-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+/* Demo Purpose Only*/
+.demo {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.demo a {
+    font-family: 'Raleway', sans-serif;
+    color: #2ecc71;
 }
