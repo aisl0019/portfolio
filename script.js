@@ -1,19 +1,24 @@
-// BACK TO TOP BUTTON
-//LÅNT FRA W3SCHOOLS: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+window.addEventListener("load", sidenVises);
 
-window.onscroll = function () {
-    scrollFunction()
-};
+let erSkjult = document.querySelector("#menu").classList.contains("hidden");
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
+function sidenVises() {
+    console.log("Siden vises!");
+
+    // klik på menu-knap
+    document.querySelector("#menuknap").addEventListener("click", toggleMenu);
 }
 
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+function toggleMenu() {
+    console.log("Toggle menu");
+
+    document.querySelector("#menu").classList.toggle("hidden");
+
+    if (erSkjult == true) {
+        // menu er skjult, lav knap til burger
+        document.querySelector("#menuknap").textContent = "☰";
+    } else {
+        // menu er vist, lav knap til kryds
+        document.querySelector("#menuknap").textContent = "X";
+    }
 }
