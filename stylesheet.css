@@ -45,6 +45,35 @@ header nav a:hover {
     color: rgb(255, 165, 0);
 }
 
+/****** BURGERMENU ******/
+
+.hidden {
+    transform: scale(0);
+}
+
+#menuknap {
+    display: inline-block;
+}
+
+#menu {
+    list-style-type: none;
+    transition: transform 1s;
+    transform-origin: top left;
+}
+
+@media only screen and (min-width: 500px) {
+    #menuknap {
+        display: none;
+    }
+
+    #menu {
+        transform: none;
+        transition: transform 0s;
+        position: static;
+    }
+}
+
+
 /****** BACK TO TOP BUTTON ******/
 /****** LÅNT FRA W3SCHOOLS: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp******/
 
